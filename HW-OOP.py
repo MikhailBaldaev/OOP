@@ -15,7 +15,7 @@ class Student:
             else:
                 lecturer.feedback_from_students[course] = [feedback]
         else:
-            print('Ошибка')
+            return('Ошибка')
 
     def __str__(self):
         self.courses_in_progress = ', '.join(self.courses_in_progress)
@@ -26,49 +26,49 @@ class Student:
 
     def average_hw_grade(self):
         total = 0
-        i = 0
+        quantity = 0
         for key, value in self.grades.items():
             for grade in value:
                 total += grade
-                i += 1
-        average = round(total / i, 2)
+                quantity += 1
+        average = round(total / quantity, 2)
         return average
 
     def __eq__(self, other):
         if isinstance(other, Student):
             return self.average_hw_grade() == other.average_hw_grade()
         else:
-            print('Ошибка')
+            return('Ошибка')
 
     def __ne__(self, other):
         if isinstance(other, Student):
             return self.average_hw_grade() != other.average_hw_grade()
         else:
-            print('Ошибка')
+            return('Ошибка')
 
     def __ge__(self, other):
         if isinstance(other, Student):
             return self.average_hw_grade() >= other.average_hw_grade()
         else:
-            print('Ошибка')
+            return('Ошибка')
 
     def __le__(self, other):
         if isinstance(other, Student):
             return self.average_hw_grade() <= other.average_hw_grade()
         else:
-            print('Ошибка')
+            return('Ошибка')
 
     def __gt__(self, other):
         if isinstance(other, Student):
             return self.average_hw_grade() > other.average_hw_grade()
         else:
-            print('Ошибка')
+            return('Ошибка')
 
     def __lt__(self, other):
         if isinstance(other, Student):
             return self.average_hw_grade() < other.average_hw_grade()
         else:
-            print('Ошибка')
+            return('Ошибка')
 
 
 class Mentor:
@@ -89,49 +89,49 @@ class Lecturer(Mentor):
 
     def average_feedback(self):
         total = 0
-        i = 0
+        quantity = 0
         for key, value in self.feedback_from_students.items():
             for feedback_value in value:
                 total += feedback_value
-                i += 1
-        average = round(total / i, 2)
+                quantity += 1
+        average = round(total / quantity, 2)
         return average
 
     def __eq__(self, other):
         if isinstance(other, Lecturer):
             return self.average_feedback() == other.average_feedback()
         else:
-            print('Ошибка')
+            return('Ошибка')
 
     def __ne__(self, other):
         if isinstance(other, Lecturer):
             return self.average_feedback() != other.average_feedback()
         else:
-            print('Ошибка')
+            return('Ошибка')
 
     def __ge__(self, other):
         if isinstance(other, Lecturer):
             return self.average_feedback() >= other.average_feedback()
         else:
-            print('Ошибка')
+            return('Ошибка')
 
     def __le__(self, other):
         if isinstance(other, Lecturer):
             return self.average_feedback() <= other.average_feedback()
         else:
-            print('Ошибка')
+            return('Ошибка')
 
     def __gt__(self, other):
         if isinstance(other, Lecturer):
             return self.average_feedback() > other.average_feedback()
         else:
-            print('Ошибка')
+            return('Ошибка')
 
     def __lt__(self, other):
         if isinstance(other, Lecturer):
             return self.average_feedback() < other.average_feedback()
         else:
-            print('Ошибка')
+            return('Ошибка')
 
 
 class Reviewer(Mentor):
@@ -145,7 +145,7 @@ class Reviewer(Mentor):
             else:
                 student.grades[course] = [grade]
         else:
-            print('Ошибка')
+            return('Ошибка')
 
     def __str__(self):
         text = f'Имя: {self.name} \nФамилия: {self.surname}'
